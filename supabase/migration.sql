@@ -1,4 +1,3 @@
--- QRForge schema. Run in Supabase: SQL Editor > New query > paste > Run.
 create extension if not exists "pgcrypto";
 
 create table public.profiles (
