@@ -1,0 +1,628 @@
+
+/* =========================================
+   QRFORGE GENERATOR
+   Modern SaaS / Violet / White
+========================================= */
+
+.workspace {
+  --gen-primary: #6559e8;
+  --gen-primary-hover: #5145d0;
+  --gen-primary-soft: #f0efff;
+  --gen-border: #e8e7ef;
+  --gen-muted: #777783;
+
+  display: grid;
+  grid-template-columns: 235px minmax(0, 1fr) 340px;
+  align-items: start;
+  gap: 18px;
+
+  width: 100%;
+  max-width: 1440px;
+  margin: 32px auto;
+  padding: 0 28px;
+}
+
+/* MAIN PANELS */
+
+.workspace > .card {
+  min-width: 0;
+  padding: 22px;
+  background: var(--card);
+  border: 1px solid var(--gen-border);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(20, 20, 40, 0.025);
+  transition: border-color .2s ease;
+}
+
+.workspace > .card:hover {
+  border-color: #dcd9f5;
+}
+
+/* PANEL HEADINGS */
+
+.workspace .card-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 22px;
+  color: var(--text);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+
+.workspace .step {
+  display: grid;
+  place-items: center;
+  width: 27px;
+  height: 27px;
+  flex-shrink: 0;
+  border-radius: 7px;
+  background: var(--gen-primary-soft);
+  color: var(--gen-primary);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* =========================================
+   DESTINATION SELECTOR
+========================================= */
+
+.dest-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.dest {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  width: 100%;
+  min-height: 43px;
+  padding: 10px 12px;
+
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 8px;
+
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 500;
+  text-align: left;
+
+  transition: background .18s ease,
+              color .18s ease,
+              border-color .18s ease;
+}
+
+.dest svg {
+  flex-shrink: 0;
+  color: #92929e;
+  transition: color .18s ease;
+}
+
+.dest:hover {
+  background: #f7f6ff;
+  color: var(--gen-primary);
+}
+
+.dest:hover svg {
+  color: var(--gen-primary);
+}
+
+.dest.active {
+  background: var(--gen-primary-soft);
+  border-color: #e3e0ff;
+  color: var(--gen-primary);
+  font-weight: 650;
+}
+
+.dest.active svg {
+  color: var(--gen-primary);
+}
+
+/* =========================================
+   FORM FIELDS
+========================================= */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-top: 4px;
+}
+
+.field label {
+  color: var(--text);
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.field input:not([type="checkbox"]):not([type="color"]):not([type="range"]),
+.field select,
+.field textarea {
+  width: 100%;
+  min-height: 42px;
+  padding: 10px 12px;
+
+  background: #fff;
+  border: 1px solid #e5e4ec;
+  border-radius: 7px;
+
+  color: var(--text);
+  font-size: 13px;
+
+  outline: none;
+  transition: border-color .2s ease,
+              box-shadow .2s ease;
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+  color: #a4a4af;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: var(--gen-primary);
+  box-shadow: 0 0 0 3px rgba(101, 89, 232, .09);
+  outline: none;
+}
+
+.field textarea {
+  min-height: 100px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.field select {
+  cursor: pointer;
+}
+
+.check {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--text);
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.check input {
+  accent-color: var(--gen-primary);
+  width: 15px;
+  height: 15px;
+}
+
+.err {
+  color: #dc4242;
+  font-size: 11px;
+}
+
+/* =========================================
+   CUSTOMIZER
+========================================= */
+
+.sub {
+  margin: 23px 0 10px;
+  color: var(--text);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: -.1px;
+}
+
+.workspace hr {
+  margin: 22px 0 18px;
+  border: 0;
+  border-top: 1px solid var(--gen-border);
+}
+
+/* QR TYPE TOGGLE */
+
+.seg {
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  margin: 12px 0 20px;
+
+  background: #f5f5f8;
+  border: 1px solid #ecebf1;
+  border-radius: 8px;
+}
+
+.seg button {
+  flex: 1;
+  padding: 9px 10px;
+
+  background: transparent;
+  border: 0;
+  border-radius: 6px;
+
+  color: #777783;
+  font-size: 12px;
+  font-weight: 600;
+
+  transition: all .2s ease;
+}
+
+.seg button:hover {
+  color: var(--gen-primary);
+}
+
+.seg button.active {
+  background: #fff;
+  color: var(--gen-primary);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .08);
+}
+
+/* PATTERN PICKER */
+
+.pattern-picker,
+.pattern-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+/* COLOR SWATCHES */
+
+.swatches {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.swatch {
+  position: relative;
+  width: 29px;
+  height: 29px;
+  padding: 0;
+
+  border: 2px solid #e5e4ec;
+  border-radius: 7px;
+
+  cursor: pointer;
+  transition: transform .18s ease,
+              outline .18s ease;
+}
+
+.swatch:hover {
+  transform: translateY(-2px);
+}
+
+.swatch.active {
+  outline: 2px solid var(--gen-primary);
+  outline-offset: 3px;
+  border-color: #fff;
+}
+
+.swatch.custom {
+  border-radius: 7px;
+}
+
+/* WARNING */
+
+.warn {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 11px 12px;
+
+  background: #fff8ed;
+  border: 1px solid #f5e5c8;
+  border-radius: 7px;
+
+  color: #a56819;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.warn svg {
+  flex-shrink: 0;
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.workspace .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  min-height: 40px;
+  padding: 10px 15px;
+
+  border: 1px solid transparent;
+  border-radius: 7px;
+
+  font-size: 12px;
+  font-weight: 650;
+  text-decoration: none;
+
+  transition: all .2s ease;
+}
+
+.workspace .btn.primary {
+  background: var(--gen-primary);
+  color: #fff;
+}
+
+.workspace .btn.primary:hover:not(:disabled) {
+  background: var(--gen-primary-hover);
+}
+
+.workspace .btn.ghost {
+  background: #fff;
+  border-color: #e5e4ec;
+  color: #383842;
+}
+
+.workspace .btn.ghost:hover:not(:disabled) {
+  background: #f8f7ff;
+  border-color: var(--gen-primary);
+  color: var(--gen-primary);
+}
+
+.workspace .btn.block {
+  width: 100%;
+  margin-top: 12px;
+}
+
+.workspace button:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+/* =========================================
+   QR PREVIEW
+========================================= */
+
+.workspace .preview-card {
+  position: sticky;
+  top: 88px;
+  padding: 21px;
+}
+
+.preview {
+  display: grid;
+  place-items: center;
+
+  width: 100%;
+  min-height: 260px;
+  padding: 20px;
+
+  background: #fafaff;
+  border: 1px solid #eceaf7;
+  border-radius: 9px;
+
+  margin-bottom: 18px;
+}
+
+.qr-box {
+  display: grid;
+  place-items: center;
+  width: 100%;
+}
+
+.qr-box canvas,
+.qr-box img,
+.qr-box svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.empty {
+  padding: 24px 15px;
+  color: var(--gen-muted);
+  font-size: 12px;
+  line-height: 1.7;
+  text-align: center;
+}
+
+/* =========================================
+   SAVE PANEL
+========================================= */
+
+.save-panel {
+  margin-top: 20px;
+  padding-top: 19px;
+  border-top: 1px solid var(--gen-border);
+}
+
+.save-panel .field {
+  margin-top: 0;
+}
+
+.save-panel strong {
+  display: block;
+  margin-top: 5px;
+  overflow-wrap: anywhere;
+  color: var(--gen-primary);
+  font-size: 11px;
+}
+
+.save-panel .small {
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+/* =========================================
+   MUTED TEXT
+========================================= */
+
+.workspace .muted {
+  color: var(--gen-muted);
+}
+
+.workspace .small {
+  font-size: 11px;
+}
+
+.workspace a:not(.btn) {
+  color: var(--gen-primary);
+  text-decoration: none;
+}
+
+.workspace a:not(.btn):hover {
+  text-decoration: underline;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+  .workspace {
+    grid-template-columns: 210px minmax(0, 1fr);
+    gap: 15px;
+    padding: 0 20px;
+  }
+
+  .workspace .preview-card {
+    position: static;
+    grid-column: 1 / -1;
+  }
+
+  .preview {
+    min-height: 230px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+  .workspace {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin: 18px auto;
+    padding: 0 14px;
+  }
+
+  .workspace > .card {
+    padding: 18px;
+  }
+
+  .dest-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 7px;
+  }
+
+  .dest {
+    min-width: 0;
+    padding: 10px 9px;
+    font-size: 12px;
+  }
+
+  .workspace .preview-card {
+    grid-column: auto;
+  }
+
+  .preview {
+    min-height: 230px;
+    padding: 16px;
+  }
+
+  .workspace .card-title {
+    margin-bottom: 18px;
+  }
+}
+
+/* SMALL MOBILE */
+
+@media (max-width: 380px) {
+  .workspace {
+    padding: 0 11px;
+  }
+
+  .workspace > .card {
+    padding: 15px;
+  }
+
+  .dest-list {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .dest {
+    gap: 7px;
+    font-size: 11px;
+  }
+
+  .preview {
+    min-height: 200px;
+  }
+}
+
+/* =========================================
+   DARK MODE
+========================================= */
+
+[data-theme="dark"] .workspace {
+  --gen-border: #30303b;
+  --gen-muted: #a1a1af;
+  --gen-primary-soft: #272344;
+}
+
+[data-theme="dark"] .workspace > .card {
+  background: var(--card);
+  border-color: var(--gen-border);
+  box-shadow: none;
+}
+
+[data-theme="dark"] .dest:hover,
+[data-theme="dark"] .dest.active {
+  background: #292444;
+  border-color: #45406f;
+}
+
+[data-theme="dark"] .field input:not([type="checkbox"]):not([type="color"]):not([type="range"]),
+[data-theme="dark"] .field select,
+[data-theme="dark"] .field textarea {
+  background: #20202a;
+  border-color: #393945;
+  color: var(--text);
+}
+
+[data-theme="dark"] .seg {
+  background: #20202a;
+  border-color: #393945;
+}
+
+[data-theme="dark"] .seg button.active {
+  background: #343044;
+  color: #b4aaff;
+}
+
+[data-theme="dark"] .workspace .btn.ghost {
+  background: #20202a;
+  border-color: #393945;
+  color: var(--text);
+}
+
+[data-theme="dark"] .preview {
+  background: #20202a;
+  border-color: #393945;
+}
+
+[data-theme="dark"] .workspace hr,
+[data-theme="dark"] .save-panel {
+  border-color: var(--gen-border);
+}
+
+[data-theme="dark"] .swatch {
+  border-color: #484854;
+}

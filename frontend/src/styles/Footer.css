@@ -1,0 +1,170 @@
+
+/* ==========================================
+   QRFORGE SITE FOOTER - ISOLATED STYLES
+========================================== */
+
+.qrf-site-footer {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 65px 24px 0;
+  background: #17171c;
+  color: #ffffff;
+  border-top: 1px solid #303037;
+  box-sizing: border-box;
+  isolation: isolate;
+}
+
+.qrf-site-footer *,
+.qrf-site-footer *::before,
+.qrf-site-footer *::after {
+  box-sizing: border-box;
+}
+
+.qrf-site-footer-wrap {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+/* Brand and navigation layout */
+
+.qrf-site-footer-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 70px;
+  padding-bottom: 55px;
+}
+
+/* Brand */
+
+.qrf-site-footer-identity {
+  width: 300px;
+  max-width: 100%;
+  flex-shrink: 0;
+}
+
+.qrf-site-footer-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #ffffff !important;
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: -0.8px;
+  text-decoration: none !important;
+}
+
+.qrf-site-footer-brand svg {
+  color: #9388ff;
+  flex-shrink: 0;
+}
+
+.qrf-site-footer-identity > p {
+  margin: 16px 0 20px;
+  color: #9999a3 !important;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.qrf-site-footer-create {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #a69dff !important;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none !important;
+  transition: color 0.2s ease;
+}
+
+.qrf-site-footer-create:hover {
+  color: #ffffff !important;
+}
+
+/* Navigation */
+
+.qrf-site-footer-navigation {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(100px, 1fr));
+  gap: 50px;
+}
+
+.qrf-site-footer-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.qrf-site-footer-column h4 {
+  margin: 3px 0 7px;
+  color: #ffffff !important;
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.qrf-site-footer-column a {
+  color: #9999a3 !important;
+  font-size: 12px;
+  text-decoration: none !important;
+  transition: color 0.2s ease;
+}
+
+.qrf-site-footer-column a:hover {
+  color: #ffffff !important;
+}
+
+/* Bottom bar */
+
+.qrf-site-footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+  min-height: 70px;
+  border-top: 1px solid #303037;
+  color: #777780 !important;
+  font-size: 11px;
+}
+
+.qrf-site-footer-bottom span {
+  color: #777780 !important;
+}
+
+/* Tablet */
+
+@media (max-width: 750px) {
+  .qrf-site-footer {
+    padding: 50px 22px 0;
+  }
+
+  .qrf-site-footer-main {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .qrf-site-footer-navigation {
+    width: 100%;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 480px) {
+  .qrf-site-footer-navigation {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 32px;
+  }
+
+  .qrf-site-footer-bottom {
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px 0;
+  }
+}

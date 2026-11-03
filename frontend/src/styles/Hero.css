@@ -1,0 +1,439 @@
+
+/* =====================================
+   QRFORGE INTRO / HERO
+   Light + Dark Theme
+   Black + Violet + White
+===================================== */
+
+.forge-intro {
+  width: 100%;
+  padding: 38px 24px 32px;
+  background: var(--bg);
+  color: var(--text);
+  overflow: hidden;
+  transition: background .25s ease, color .25s ease;
+}
+
+.forge-intro-layout {
+  max-width: 90%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+  gap: 40px;
+}
+
+/* LEFT CONTENT */
+
+.forge-intro-copy {
+  max-width: 540px;
+}
+
+.forge-intro-kicker {
+  display: inline-block;
+  margin-bottom: 13px;
+  color: var(--primary);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.1px;
+}
+
+.forge-intro-copy h1 {
+  margin: 0;
+  color: var(--text);
+  font-size: clamp(38px, 4.5vw, 52px);
+  font-weight: 750;
+  line-height: 1.08;
+  letter-spacing: -2.5px;
+}
+
+.forge-intro-copy h1 span {
+  color: var(--primary);
+}
+
+.forge-intro-description {
+  max-width: 450px;
+  margin: 14px 0 19px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+/* ACTIONS */
+
+.forge-intro-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.forge-intro-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 19px;
+  background: var(--primary);
+  border: 1px solid var(--primary);
+  border-radius: 7px;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background .2s ease, transform .2s ease;
+}
+
+.forge-intro-button:hover {
+  background: var(--primary-d);
+  border-color: var(--primary-d);
+  transform: translateY(-1px);
+}
+
+.forge-intro-link {
+  padding: 12px 17px;
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color .2s ease;
+}
+
+.forge-intro-link:hover {
+  color: var(--primary);
+}
+
+/* BENEFITS */
+
+.forge-intro-benefits {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 17px;
+}
+
+.forge-intro-benefits span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.forge-intro-benefits svg {
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+/* RIGHT PREVIEW */
+
+.forge-intro-visual {
+  position: relative;
+  width: 100%;
+  max-width: 350px;
+  justify-self: end;
+  padding-bottom: 14px;
+}
+
+.forge-intro-window {
+  width: 100%;
+  overflow: hidden;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  transition: background .25s ease, border-color .25s ease;
+}
+
+/* WINDOW HEADER */
+
+.forge-intro-window-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 11px 15px;
+  border-bottom: 1px solid var(--border);
+}
+
+.forge-intro-brand {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--text);
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.forge-intro-brand-icon {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  background: var(--primary);
+  color: #ffffff;
+}
+
+.forge-intro-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.forge-intro-status span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--primary);
+}
+
+/* WINDOW BODY */
+
+.forge-intro-window-body {
+  padding: 13px 18px 11px;
+}
+
+.forge-intro-preview-heading > span {
+  color: var(--muted);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .8px;
+}
+
+.forge-intro-preview-heading h3 {
+  margin: 4px 0 0;
+  color: var(--text);
+  font-size: 16px;
+  font-weight: 650;
+  letter-spacing: -.4px;
+}
+
+/* QR CODE */
+
+.forge-intro-qr {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 155px;
+  margin-top: 11px;
+  padding: 10px;
+
+  background: var(--primary-soft);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.forge-intro-qr canvas,
+.forge-intro-qr img,
+.forge-intro-qr svg {
+  display: block;
+  width: 130px;
+  max-width: 100%;
+  height: auto;
+}
+
+/* QR INFORMATION */
+
+.forge-intro-qr-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.forge-intro-qr-info > span:first-child {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.forge-intro-qr-info i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--primary);
+}
+
+/* WINDOW FOOTER */
+
+.forge-intro-window-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 15px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 10px;
+}
+
+/* FLOATING NOTE */
+
+.forge-intro-note {
+  position: absolute;
+  right: -8px;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 10px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.forge-intro-note-icon {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #ffffff;
+}
+
+.forge-intro-note > div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.forge-intro-note strong {
+  color: var(--text);
+  font-size: 11px;
+}
+
+.forge-intro-note > div > span {
+  color: var(--muted);
+  font-size: 10px;
+}
+
+/* =====================================
+   TABLET
+===================================== */
+
+@media (max-width: 850px) {
+  .forge-intro {
+    padding: 35px 22px 30px;
+  }
+
+  .forge-intro-layout {
+    max-width: 95%;
+    grid-template-columns: 1fr .9fr;
+    gap: 25px;
+  }
+
+  .forge-intro-copy h1 {
+    font-size: 42px;
+    letter-spacing: -2px;
+  }
+
+  .forge-intro-visual {
+    max-width: 320px;
+  }
+
+  .forge-intro-note {
+    right: -5px;
+  }
+}
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 650px) {
+  .forge-intro {
+    padding: 32px 18px 38px;
+  }
+
+  .forge-intro-layout {
+    max-width: 100%;
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .forge-intro-copy {
+    max-width: 100%;
+  }
+
+  .forge-intro-copy h1 {
+    font-size: clamp(37px, 9vw, 43px);
+    letter-spacing: -2px;
+  }
+
+  .forge-intro-description {
+    font-size: 14px;
+    margin: 13px 0 17px;
+  }
+
+  .forge-intro-benefits {
+    gap: 11px 15px;
+    margin-top: 15px;
+  }
+
+  .forge-intro-visual {
+    max-width: 320px;
+    width: 100%;
+    justify-self: center;
+  }
+
+  .forge-intro-qr {
+    min-height: 145px;
+  }
+
+  .forge-intro-qr canvas,
+  .forge-intro-qr img,
+  .forge-intro-qr svg {
+    width: 120px;
+  }
+
+  .forge-intro-note {
+    right: 7px;
+  }
+}
+
+/* =====================================
+   SMALL MOBILE
+===================================== */
+
+@media (max-width: 380px) {
+  .forge-intro {
+    padding: 28px 16px 32px;
+  }
+
+  .forge-intro-copy h1 {
+    font-size: 35px;
+  }
+
+  .forge-intro-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .forge-intro-button,
+  .forge-intro-link {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .forge-intro-window-body {
+    padding: 12px 14px 10px;
+  }
+
+  .forge-intro-qr {
+    min-height: 135px;
+  }
+
+  .forge-intro-qr canvas,
+  .forge-intro-qr img,
+  .forge-intro-qr svg {
+    width: 110px;
+  }
+}

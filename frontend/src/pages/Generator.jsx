@@ -10,6 +10,7 @@ import { useAuth } from '../contexts/AuthContext.jsx';
 import { useBilling } from '../contexts/BillingContext.jsx';
 import { api } from '../services/api.js';
 import { uploadLogo } from '../services/storage.js';
+import '../styles/Generator.css';
 
 const initialForms = Object.fromEntries(DESTINATIONS.map((d) => [d.id, d.initial]));
 

@@ -1,93 +1,106 @@
 
 import { Link } from 'react-router-dom';
+import { ArrowUpRight, Check } from 'lucide-react';
 import HeroQR from './HeroQR.jsx';
+import '../../styles/Hero.css';
 
 export default function Hero() {
   return (
-    <section className="hero-compact">
+    <section className="forge-intro">
 
-      <div className="hero-compact-grid"></div>
+      <div className="forge-intro-layout">
 
-      <div className="hero-compact-inner">
+        <div className="forge-intro-copy">
 
-        <div className="hero-compact-content">
-
-          <div className="hero-tag">
-            <span className="hero-pulse"></span>
-            SMART QR CODE PLATFORM
-          </div>
+          <span className="forge-intro-kicker">
+            QR CODES, MADE SIMPLE
+          </span>
 
           <h1>
-            Create smarter.
+            Better QR codes.
             <br />
-            <span>Connect faster.</span>
+            <span>Better connections.</span>
           </h1>
 
-          <p>
-            Create beautiful branded QR codes, manage your
-            digital experiences, and track every scan from
-            one powerful platform.
+          <p className="forge-intro-description">
+            Create branded QR codes, manage your links and
+            understand your audience with simple scan analytics.
+            Everything you need, in one place.
           </p>
 
-          <div className="hero-compact-actions">
-            <Link to="/generator" className="hero-compact-primary">
-              Create QR Code <span>↗</span>
+          <div className="forge-intro-actions">
+            <Link to="/generator" className="forge-intro-button">
+              Create a QR code
+              <ArrowUpRight size={17} />
             </Link>
 
-            <Link to="/pricing" className="hero-compact-secondary">
-              View pricing
+            <Link to="/pricing" className="forge-intro-link">
+              Explore pricing
             </Link>
           </div>
 
-          <div className="hero-compact-features">
-            <span>✓ Dynamic QR codes</span>
-            <span>✓ Custom branding</span>
-            <span>✓ Scan analytics</span>
+          <div className="forge-intro-benefits">
+            <span><Check size={15} /> Free to start</span>
+            <span><Check size={15} /> No design skills needed</span>
+            <span><Check size={15} /> Instant downloads</span>
           </div>
 
         </div>
 
-        <div className="hero-compact-visual">
+        <div className="forge-intro-visual">
 
-          <div className="compact-glow"></div>
+          <div className="forge-intro-window">
 
-          <div className="compact-preview">
-
-            <div className="compact-preview-header">
-              <div className="compact-dots">
-                <i></i><i></i><i></i>
+            <div className="forge-intro-window-header">
+              <div className="forge-intro-brand">
+                <span className="forge-intro-brand-icon">
+                  <ArrowUpRight size={16} />
+                </span>
+                QRForge Studio
               </div>
-              <span>QR STUDIO</span>
-              <span className="compact-live">● LIVE</span>
+
+              <span className="forge-intro-status">
+                <span />
+                Ready
+              </span>
             </div>
 
-            <div className="compact-preview-content">
+            <div className="forge-intro-window-body">
 
-              <div className="compact-preview-title">
-                <div>
-                  <small>YOUR QR EXPERIENCE</small>
-                  <h3>Brand Preview</h3>
-                </div>
-                <span>✦</span>
+              <div className="forge-intro-preview-heading">
+                <span>YOUR QR CODE</span>
+                <h3>Ready to share</h3>
               </div>
 
-              <div className="compact-qr">
+              <div className="forge-intro-qr">
                 <HeroQR />
               </div>
 
-              <div className="compact-preview-footer">
-                <span>✓ Ready to scan</span>
-                <span>Dynamic QR</span>
+              <div className="forge-intro-qr-info">
+                <span>
+                  <i />
+                  QR code generated
+                </span>
+                <span>PNG · SVG</span>
               </div>
 
             </div>
+
+            <div className="forge-intro-window-footer">
+              <span>Made with QRForge</span>
+              <span>01 / 01</span>
+            </div>
+
           </div>
 
-          <div className="compact-floating">
-            <span>↗</span>
+          <div className="forge-intro-note">
+            <span className="forge-intro-note-icon">
+              <Check size={15} />
+            </span>
+
             <div>
-              <strong>Track every scan</strong>
-              <small>Powerful analytics</small>
+              <strong>Designed for your brand</strong>
+              <span>Customize. Download. Share.</span>
             </div>
           </div>
 

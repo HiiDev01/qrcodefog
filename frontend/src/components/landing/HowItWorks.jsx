@@ -29,33 +29,30 @@ const STEPS = [
 export default function HowItWorks() {
   return (
     <section className="how-sleek" id="how">
-
       <div className="how-sleek-inner">
 
         <div className="how-sleek-heading">
-
           <div className="how-sleek-label">
-            <span></span>
+            <span className="how-label-dot" />
             HOW IT WORKS
           </div>
 
           <div className="how-sleek-heading-row">
             <h2>
-              Simplicity is the
+              Everything starts
               <br />
-              <span>ultimate advantage.</span>
+              with <span>three simple steps.</span>
             </h2>
 
             <p>
-              From your first idea to your first scan.
-              Everything happens in three simple steps.
+              Create, customize and share.
+              Everything you need to make
+              your QR codes work harder.
             </p>
           </div>
-
         </div>
 
         <div className="how-sleek-list">
-
           {STEPS.map((step) => (
             <article className="how-sleek-card" key={step.number}>
 
@@ -64,7 +61,6 @@ export default function HowItWorks() {
               </div>
 
               <div className="sleek-step-main">
-
                 <div className="sleek-step-label">
                   {step.label}
                 </div>
@@ -78,7 +74,6 @@ export default function HowItWorks() {
                     <span key={tag}>{tag}</span>
                   ))}
                 </div>
-
               </div>
 
               <div className="sleek-step-icon">
@@ -87,7 +82,6 @@ export default function HowItWorks() {
 
             </article>
           ))}
-
         </div>
 
         <div className="how-sleek-bottom">
@@ -102,7 +96,6 @@ export default function HowItWorks() {
         </div>
 
       </div>
-
     </section>
   );
 }
