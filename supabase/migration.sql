@@ -65,7 +65,7 @@ create policy "own qr insert" on public.qr_codes for insert with check (auth.uid
 create policy "own qr update" on public.qr_codes for update using (auth.uid() = user_id);
 create policy "own qr delete" on public.qr_codes for delete using (auth.uid() = user_id);
 
--- Users can read scans of their own codes. Scans are inserted only by the backend (service role).
+-- Users can read scans of their own codes. Scans are inserted only by my backend.
 create policy "own scans select" on public.qr_scans for select using (
   exists (select 1 from public.qr_codes q where q.id = qr_code_id and q.user_id = auth.uid())
 );
