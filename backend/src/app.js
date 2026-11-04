@@ -15,8 +15,26 @@ const app = express();
 app.set('trust proxy', 1); // Render/Railway sit behind a proxy
 app.use(helmet());
 // Stripe signs the raw request body, so this route must be registered before express.json().
-app.post('/api/billing/webhook', express.raw({ type: 'application/json' }), asyncHandler(handleWebhook));
-app.use(cors({ origin: process.env.CLIENT_URL, credentials: true }));
+app.post('/api/billing/webhook', express.raw({type : 'application/json'}),
+   asyncHandler(handleWebhook)
+)
+
+const allowOrigin = [
+    process.env.CLIENT_URL,
+    'http://localhost:5173',
+].filter(Boolean)
+app.use(cors({
+    origin: (origin, callback) =>{
+        if(!origin || allowOrigin.includes(origin)){
+            return callback(null, true)
+        }
+        
+        return callback(new Error(`cors block your origin: ${origin}`))
+    },
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+}));
 app.use(express.json({ limit: '100kb' }));
 
 app.get('/health', (_req, res) => res.json({ ok: true }));
